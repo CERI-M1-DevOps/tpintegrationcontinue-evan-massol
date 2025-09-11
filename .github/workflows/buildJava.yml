@@ -8,6 +8,9 @@ jobs:
   Build:
     runs-on: ubuntu-latest
 
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
     steps:
       - name: "Se placer dans le dépôt courant"
         uses: actions/checkout@v4
@@ -21,4 +24,4 @@ jobs:
           java-version: '21'
 
       - name: "Build avec Maven"
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=$(echo "CERI-M1-DevOps/tpintegrationcontinue-evan-massol")
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=$(echo ${{ github.repository }} | sed 's-/-_-')
