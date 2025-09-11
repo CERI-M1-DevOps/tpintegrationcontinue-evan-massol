@@ -10,7 +10,6 @@ jobs:
 
     steps:
       - name: "Se placer dans le dépôt courant"
-        id: repo
         uses: actions/checkout@v4
         with:
           repository: '${{ github.repository }}'
@@ -22,4 +21,4 @@ jobs:
           java-version: '21'
 
       - name: "Build avec Maven"
-        run: mvn -B package --file pom.xml
+        run: mvn -B package
