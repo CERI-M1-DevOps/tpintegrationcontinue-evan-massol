@@ -4,15 +4,28 @@ public class ListeSimple {
     private long size;
     Noeud tete;
 
+    /**
+     * Gets the size of the list.
+     * @return the size of the list
+     */
     public long getSize() {
         return size;
     }
 
+    /**
+     * Adds an element to the list.
+     * @param element the element to add
+     */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
     }
 
+    /**
+     * Modifies the first occurrence of an element in the list.
+     * @param element the element to modify
+     * @param nouvelleValeur the new value
+     */
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null && courant.getElement() != element)
@@ -30,6 +43,10 @@ public class ListeSimple {
         }
     }
 
+    /**
+     * Returns a string representation of the list.
+     * @return a string representation of the list
+     */
     public String toString() {
         StringBuilder sb = new StringBuilder("ListeSimple(");
         Noeud n = tete;
