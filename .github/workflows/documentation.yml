@@ -27,7 +27,7 @@ jobs:
         run: mvn -B javadoc::javadoc
 
       - name: "Déplacer la documentation générée"
-        run: mv target/site/apidocs ./public
+        run: mv ./target/reports/apidocs ./public
 
       - name: "Déployer la documentation sur GitHub Pages"
         uses: peaceiris/actions-gh-pages@v4
