@@ -26,6 +26,9 @@ jobs:
       - name: "Générer la documentation avec Maven"
         run: mvn -B javadoc::javadoc
 
+      - name: "Déplacer la documentation générée"
+        run: mv target/site/apidocs ./public
+
       - name: "Déployer la documentation sur GitHub Pages"
         uses: peaceiris/actions-gh-pages@v4
         with:
