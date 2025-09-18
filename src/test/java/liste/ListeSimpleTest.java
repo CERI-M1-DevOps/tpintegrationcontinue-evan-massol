@@ -254,7 +254,6 @@ class ListeSimpleTest {
         listeATester.echanger(r1, r2);
         System.out.println(listeATester);
         assertEquals("ListeSimple(Noeud(4), Noeud(2), Noeud(3), Noeud(1), Noeud(5))", listeATester.toString());
-        //Test avec deux noeuds identiques
         listeATester.echanger(r1, r1);
         System.out.println(listeATester);
         assertEquals("ListeSimple(Noeud(4), Noeud(2), Noeud(3), Noeud(1), Noeud(5))", listeATester.toString());
